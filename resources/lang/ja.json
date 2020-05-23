@@ -1,0 +1,20 @@
+{
+    "Request Registration": "依頼登録",
+    "Request Title": "依頼概要",
+    "Request Details": "依頼詳細",
+    "Category": "カテゴリー",
+    "Rank": "応募条件(ランク)",
+    "Price": "予算",
+    "Delivery_date": "希望納期",
+    "Supplement": "その他の補足情報",
+    "Login": "ログイン",
+    "Register": "新規登録",
+    "Commission": "依頼する！",
+    "Invalid operation was performed.": "不正な操作が行われました",
+    "Go Commission": "依頼を見る",
+    "Application_Message": "応募メッセージ",
+    "Application": "応募する",
+    "Go Edit": "編集する",
+    "Go Delete": "削除する",
+    "Deleted.": "削除しました"
+}
