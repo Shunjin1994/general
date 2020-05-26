@@ -3,29 +3,32 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
+    public function show($id)
+    {
+
+        $profile = User::find($id);
+
+        return view('profile.show', ['profile' => $profile]);
+    }
+
     public function edit($id){
-        if(!ctype_digit($id)){
-            return redirect('/mypage/profile')->with('flash_message', __('Invalid operation was performed.'));
-        }
 
         // $commission = Commission::find($id);
-        $user = Auth::user()->users()->find($id);
+        $profile = Auth::user()->find($id);
 
-        return view('mypage.edit', ['user' => $user]);
+        return view('profile.edit', ['profile' => $profile]);
     }
 
     public function update(Request $request, $id)
     {
-        if(!ctype_digit($id)){
-            return redirect('/mypage/profile')->with('flash_message', __('Invalid operation was performed.'));
-        }
 
-        $user = User::find($id);
-        $user->fill($request->all())->save();
+        $profile = User::find($id);
+        $profile->fill($request->all())->save();
 
-        return redirect('/mypage/profile')->with('flash_message', __('Registered.'));
+        return redirect('profile')->with('flash_message', __('Registered.'));
     }
 }

@@ -15,9 +15,9 @@ class CreateHistorysTable extends Migration
     {
         Schema::create('historys', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('history_id');
-            $table->integer('request_id');
-            $table->timestamps();
+            $table->integer('user_id');
+            $table->integer('commissioner_id');
+            // $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

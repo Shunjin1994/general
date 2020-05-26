@@ -21,9 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('pic')->nullable();
             $table->integer('rank_id')->nullable();
             $table->string('comment')->nullable();
-            $table->integer('request_id')->nullable();
-            $table->integer('evaluation')->nullable();
+            $table->integer('commission_id')->nullable();
+            $table->integer('evaluation_id')->nullable();
             $table->integer('message')->nullable();
+            $table->boolean('billing_flg')->default(0);
             $table->dateTime('created_at');
             $table->timestamp('updated_at');
             $table->boolean('delete_flg')->default(0);

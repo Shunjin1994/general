@@ -16,6 +16,18 @@
 
                     You are logged in!
                 </div>
+
+                <form method="POST" action="{{ route('mypage') }}">
+                            @csrf
+                
+                    <div class="form-group row mb-0">
+                        <div class="col-md-6 offset-md-5">
+                            <button type="submit" class="btn btn-primary" style="margin-bottom:15px">
+                                {{ __('Mypage') }}
+                            </button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

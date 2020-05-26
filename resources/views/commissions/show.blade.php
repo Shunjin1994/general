@@ -8,12 +8,15 @@
                     <div class="card-header">{{ __('Practice').'「'.$commission->title.'」' }}</div>
 
                     <div class="card-body text-center">
-                        <p>{{ $commission->details }}</p>
-                        <p>{{ $commission->price }}</p>
-                        <p>{{ $commission->conditions }}</p>
-                        <p>{{ $commission->rank }}</p>
-                        <p>{{ $commission->delivery_date }}</p>
-                        <p>{{ $commission->supplement }}</p>
+                        <span>詳細</span><p>{{ $commission->details }}</p>
+                        <span>報酬</span><p>{{ $commission->price }}</p>
+                        <span>応募条件</span><p>{{ $commission->conditions }}</p>
+                        <span>必要ランク</span><p>{{ $commission->rank }}</p>
+                        <span>納期</span><p>{{ $commission->delivery_date }}</p>
+                        <span>その他補足情報</span><p>{{ $commission->supplement }}</p>
+                        <span>発注日</span><p>{{ $commission->created_at }}</p>
+                        <p>{{ $commission->status }}</p>
+
 
                         <div class="form-group row">
                             <label for="application_message" class="col-md-4 col-form-label text-md-right">{{ __('Application_Message') }}</label>
@@ -30,7 +33,7 @@
                         </div>
 
                         <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="col-md-8 offset-md-2">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Application') }}
                                 </button>

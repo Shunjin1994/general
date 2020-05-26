@@ -3,21 +3,12 @@
 @section('content')
     <div class="container">
         <h2>{{ __('Mypage') }}</h2>
+        
+        <div class="col-sm-2" style="margin-bottom:10px">
+            <a href="{{ route('commissions.new') }}" class="btn btn-warning"><i class="glyphicon glyphicon-plus"></i> 新規登録</a>
+        </div>
+        
         <div class="row">
-
-            <div class="row" style="margin-bottom: 30px;">
-                <div class="col-sm-10" style="margin-bottom: 10px;">
-                    <form method="get" action="" class="form-inline">
-                        <div class="form-group">
-                            <input type="text" name="keyword" class="form-control" value="{{ $keyword }}" placeholder="検索キーワード">
-                        </div>
-                        <input type="submit" value="検索" class="btn btn-info">
-                    </form>
-                </div>
-                <div class="col-sm-2">
-                    <a href="{{ route('commissions.new') }}" class="btn btn-warning"><i class="glyphicon glyphicon-plus"></i> 新規登録</a>
-                </div>
-            </div>
 
             @foreach ($commissions as $commission)
 
@@ -39,9 +30,5 @@
 
         </div>
 
-        <div>
-            {{-- {!! $commissions->render() !!}--}}
-            {!! $commissions->appends(['keyword'=>$keyword])->render() !!}
-        </div>
     </div>
 @endsection

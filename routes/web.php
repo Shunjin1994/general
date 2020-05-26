@@ -19,14 +19,15 @@ Route::get('/', function () {
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/commissions/new', 'CommissionsController@new')->name('commissions.new');
     Route::post('/commissions', 'CommissionsController@create')->name('commissions.create');
-    Route::get('/commissions', 'CommissionsController@index')->name('commissions');
+    // Route::get('/commissions', 'CommissionsController@index')->name('commissions');
     Route::get('/commissions/{id}/edit', 'CommissionsController@edit')->name('commissions.edit');
     Route::post('/commissions/{id}', 'CommissionsController@update')->name('commissions.update');
     Route::post('/commissions/{id}/delete', 'CommissionsController@destroy')->name('commissions.delete');
     Route::get('/commissions/{id}', 'CommissionsController@show')->name('commissions.show');
+    Route::post('/mypage', 'CommissionsController@mypage')->name('mypage');
     Route::get('/mypage', 'CommissionsController@mypage')->name('mypage');
-    Route::get('/mypage/profile/{id}', 'ProfileController@edit')->name('profile.edit');
-    Route::post('/maypage/profile/{id}', 'ProfileController@update')->name('profile.update');
+    Route::get('/profile', 'ProfileController@show')->name('profile.show');
+    Route::post('/profile', 'ProfileController@update')->name('profile.update');
 });
 
 Route::get('/login', 'LoginController@loggedOut')->name('logout');

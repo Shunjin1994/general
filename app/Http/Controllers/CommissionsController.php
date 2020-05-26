@@ -15,7 +15,7 @@ class CommissionsController extends Controller
 
     public function mypage(){
         $commissions = Auth::user()->commissions()->get();       //Auth::user()->commissions でも可
-        return view('mypage', compact('commissions'));
+        return view('mypage', ['commissions' => $commissions]);
     }
 
     public function new()
@@ -29,12 +29,14 @@ class CommissionsController extends Controller
             "title"=> 'required|string|max:255',
             "details"=> 'required|string|max:255',
             // "category"=> 'required|integer',
+            // "conditions"=> 'required|string|max:255',
             // "rank"=> 'required|integer',
             "price"=> 'integer|integer',
             "delivery_date"=> 'required|integer',
             "supplement"=> 'required|string|max:255'
         ]);
 
+        
         $commission = new Commission;
 
         // $commission->fill($request->all())->save();
