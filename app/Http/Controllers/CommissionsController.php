@@ -28,9 +28,9 @@ class CommissionsController extends Controller
         $request->validate([
             "title"=> 'required|string|max:255',
             "details"=> 'required|string|max:255',
-            // "category"=> 'required|integer',
-            // "conditions"=> 'required|string|max:255',
-            // "rank"=> 'required|integer',
+            "category_id"=> 'required|integer',
+            "conditions"=> 'required|string|max:255',
+            "rank"=> 'required|integer',
             "price"=> 'integer|integer',
             "delivery_date"=> 'required|integer',
             "supplement"=> 'required|string|max:255'

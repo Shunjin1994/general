@@ -26,8 +26,8 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('/commissions/{id}', 'CommissionsController@show')->name('commissions.show');
     Route::post('/mypage', 'CommissionsController@mypage')->name('mypage');
     Route::get('/mypage', 'CommissionsController@mypage')->name('mypage');
-    Route::get('/profile', 'ProfileController@show')->name('profile.show');
-    Route::post('/profile', 'ProfileController@update')->name('profile.update');
+    Route::post('/profile_show', 'ProfileController@show')->name('profile.show');
+    Route::post('/profile_edit', 'ProfileController@update')->name('profile.update');
 });
 
 Route::get('/login', 'LoginController@loggedOut')->name('logout');
