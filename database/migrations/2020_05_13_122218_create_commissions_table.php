@@ -23,13 +23,8 @@ class CreateCommissionsTable extends Migration
             $table->integer('rank');
             $table->string('supplement');
             $table->integer('user_id')->nullable();
-            // $table->integer('contractor_id')->unsigned();
-            $table->integer('contractor_id')->nullable();
-            // $table->integer('commissioner_id')->unsigned();
-            $table->integer('commissioner_id')->nullable();
-            // $table->foreign('commissioner_id')->references('id')->on('users');
+            $table->integer('commissioner_id');
             $table->integer('delivery_date');
-            // $table->integer('user_id')->nullable();
             $table->integer('evaluation_id')->nullable();
             $table->integer('evaluation_quarity')->nullable();
             $table->integer('evaluation_limit')->nullable();

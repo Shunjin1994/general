@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Commission;
 use Illuminate\Support\Facades\Auth;
+use DB;
 
 
 class CommissionsController extends Controller
@@ -35,9 +36,10 @@ class CommissionsController extends Controller
             "delivery_date"=> 'required|integer',
             "supplement"=> 'required|string|max:255'
         ]);
-
         
         $commission = new Commission;
+        
+        // $commission->commissioner_id = '?';
 
         // $commission->fill($request->all())->save();
         Auth::user()->commissions()->save($commission->fill($request->all()));

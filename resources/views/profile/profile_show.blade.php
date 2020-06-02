@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Profile').'「'.$commission->title.'」' }}</div>
+                    <div class="card-header"></div>
 
                     <div class="card-body text-center">
                         <p>{{ $profile->pic }}</p>
